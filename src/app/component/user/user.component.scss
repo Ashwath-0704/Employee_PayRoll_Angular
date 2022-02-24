@@ -1,0 +1,405 @@
+/* UC 1 – Employee Payroll App with Logo*/
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+.header {
+    padding: 15px 0;
+    background-color: #ffffff;
+}
+mat-slider {
+    width:100%;
+  }
+.emp-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid green;
+}
+
+.logo-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 0px solid green;
+    width: 80%;
+}
+
+.logo-content-img {
+    border: solid 0px #42515f;
+}
+.demo-inline-calendar-card {
+    width: 300px;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+//   add checkbox css
+.example-margin {
+    margin-right: 10px;
+}
+.example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+
+.emp-text {
+    font: normal normal bold 20px/25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0px;
+    color: #82a70c;
+    text-transform: capitalize;
+    padding-left: 5px;
+    letter-spacing: 3px;
+}
+
+.emp-payroll {
+    color: #42515f;
+}
+
+* {
+    box-sizing: border-box;
+    box-shadow: #020202;
+}
+
+
+/* UC 2 – On Document Load Set Event Listeners and UC 4 – Employee Payroll Form with Gender, Department and Salary Range*/
+
+.form-content {
+    min-height: calc(100% - 80px);
+    background-color: rgb(215, 223, 214);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid green;
+}
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+.form {
+    // width: 65%;
+    padding: 44px 60px;
+    background: #838080 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid rgb(253, 253, 252);
+    border-radius: 20px;
+    opacity: 2;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 2px 2px 2px 2px grey;
+}
+
+.form-head {
+    font: normal normal bold 24px/37px Roboto;
+    letter-spacing: 0px;
+    color: rgb(85, 77, 77);
+    text-transform: capitalize;
+    opacity: 1;
+    padding-bottom: 20px;
+}
+
+.row-content {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-items: center;
+    border: 0px solid green;
+}
+
+.label {
+    min-width: 140px;
+    margin: inherit;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+.text {
+    font-size: 16px;
+    color: #020202;
+    opacity: 2;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #020202;
+    resize: vertical;
+    border-radius: 50px;
+}
+
+.input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    border-radius: 30px;
+}
+
+#date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+
+/* UC 3 – Specify Profile Pic to the Employee Payroll App */
+
+.profile-radio-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.profile-radio-content>label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profile {
+    width: 40px;
+    border-radius: 50%;
+    margin-left: 12px;
+}
+
+
+/* UC 5 – Employee Payroll Form with start date */
+
+select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font: normal normal normal 16px Roboto;
+    letter-spacing: 0px;
+    color: #000000;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+select:hover {
+    background-color: white;
+}
+
+
+/* UC 6 – Ability to add Notes and Button */
+
+.buttonParent {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button {
+    font-size: 20px;
+    font-family: Roboto;
+    letter-spacing: 0px;
+    color: #ffffff;
+    opacity: 1;
+    background: transparent;
+    border: none;
+    font-weight: 400;
+    min-width: 140px;
+    padding: 7px 7px;
+    border: 1px solid #000000;
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: #000000;
+}
+
+.submitButton {
+    border: none;
+    border: 1px solid rgb(0, 0, 0);
+    margin-right: 30px;
+}
+
+.cancelButton {
+    text-decoration: none;
+    text-align: center;
+}
+
+.resetButton {
+    margin-right: 10px;
+}
+
+error-output {
+    margin-left: 10px;
+    font-size: 15px;
+    font-style: italic;
+    color: rgb(231, 66, 66);
+}
+
+
+/* UC7 : Using the UX design set the button style appropriately */
+
+a.button:hover {
+    background: rgb(234, 238, 237);
+    color: rgb(3, 3, 3);
+    border: #000000;
+}
+
+.submitButton:hover {
+    background: rgb(233, 238, 237);
+    color: rgb(3, 3, 3);
+    border: #000000;
+}
+
+.resetButton:hover {
+    background: rgb(231, 236, 235);
+    color: rgb(3, 3, 3);
+    border: #000000;
+}
+
+.department {
+    margin-left: 30px;
+}
+
+
+/* UC 6 Exts – Adding Media Queries */
+
+@media only screen and (max-width: 960px) {
+    .cancelButton {
+        margin-left: 0px;
+    }
+    .form {
+        width: 80%;
+        padding: 44px 20px;
+    }
+    .button {
+        margin-bottom: 10px;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width:680px) {
+    .submit-reset {
+        display: inline-flex;
+        flex-direction: row;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .header {
+        padding: 15px 0;
+        background-color: #252725;
+    }
+    .emp-text {
+        letter-spacing: 3px;
+        color: #f6f7f5;
+        padding-left: 5px;
+    }
+    .emp-payroll {
+        color: #fbfdff;
+    }
+    .form {
+        margin-top: 10px;
+        background-color: #252725;
+        overflow: hidden;
+        color: #ffffff;
+    }
+    .text {
+        color: #ffffff;
+    }
+    .form-head {
+        color: #ffffff;
+    }
+    .submit-reset {
+        width: 100%;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    select {
+        color: #ffffff;
+    }
+    select:hover {
+        color: #000000;
+    }
+    .cancelButton {
+        margin-left: 0px;
+    }
+    .form {
+        width: 85%;
+        padding: 44px 20px;
+    }
+    .profile-label {
+        margin-left: 0px;
+    }
+    .button {
+        border: 1px solid #eff1ee;
+        background-color: #fcfdf7;
+        color: #000000;
+    }
+    .button:hover {
+        background-color: #c0e44d;
+        color: #151610;
+    }
+    .cancelButton:hover {
+        background-color: #c0e44d;
+    }
+}
+
+@media only screen and (max-width:525px) {
+    .buttonParent {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .submit-reset {
+        display: contents;
+        margin: 0%;
+    }
+    .submitButton {
+        margin-right: 0%;
+    }
+    .cancelButton {
+        margin: 0px;
+        padding: -10px;
+    }
+    .resetButton {
+        margin-right: 0%;
+    }
+}
+
+
+/* for all mobiles */
+
+@media only screen and (max-width:415px) {
+    .row-content-new {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    select {
+        color: #ffffff;
+    }
+    select:hover {
+        color: #000000;
+    }
+    /* fixing the header .header {
+        position: fixed;
+        width: 100%;
+    }
+    margin top
+    .form {
+        margin-top: 21%;
+    } */
+}

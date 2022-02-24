@@ -1,0 +1,37 @@
+<div class="main-content">
+    <div class="header-content">
+        <div class="emp-detail-text">
+            Employee Details <div class="emp-count" >{{employeeCount}}</div>
+        </div>
+        <a (click)="openAddPerson()" class="add-button"> <img src="../../assets/FS HTML_CSS LP02 Employee Payroll App Assets (1)/assets/icons/add-24px.svg" alt="" width="25" height="15">Add User</a>
+    </div>
+    <div class="table-main">
+        <table id="table-display" class="table">
+            <tr>
+                <th></th>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Start Date</th>
+                <th>Note</th>
+                <th>Action</th>
+            </tr>
+            <tr *ngFor="let employee of employeeDetails">
+                <td><img class="profile" src="{{employee.profilePic}}" alt=""></td>
+                <td>{{employee.employeeId}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.gender}}</td>
+                <td> <div class="dept-label" *ngFor="let department of employee.department">{{department}}</div></td>
+                <td>{{employee.salary | currency:'INR'}}</td>
+                <td>{{employee.startDate | date: 'dd MMM yyyy'}}</td>
+                <td>{{employee.note }}</td>
+                <td>
+                    <img id={{employee.employeeId}} src="../../assets/FS HTML_CSS LP02 Employee Payroll App Assets (1)/assets/icons/delete-black-18dp.svg"  (click)="remove(employee.employeeId)" width="25" alt="delete">&nbsp;
+                    <img id={{employee.employeeId}} src="../../assets/FS HTML_CSS LP02 Employee Payroll App Assets (1)/assets/icons/create-black-18dp.svg" (click)="edit(employee)" width="25" alt="edit">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

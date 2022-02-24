@@ -1,0 +1,120 @@
+
+    <form [formGroup]="signupUser" class="form" (ngSubmit)="onSubmit()">
+        <div class="form-head">Employee Payroll Form</div>
+        <mat-form-field class="example-full-width " appearance="fill">
+            <mat-label for="name">Name</mat-label>
+            <input matInput formControlName="name" id="name" type="text" placeholder="Ex. Ashwath Naidu" required>
+        </mat-form-field>
+
+        <!-- <error-output class="text-error"></error-output> -->
+        <div class="row-content row-content-new">
+            <label class="label text" for="profile">Profile image</label>
+            <!-- profile radio -->
+            <div class="profile-radio-content">
+                <mat-radio-group formControlName="profilePic" >
+                    <!-- 1st button -->
+                    <!-- <mat-radio-button id="profile1" name="profile"
+                        value="../assert/FS HTML_CSS LP02 Employee Payroll App Assets (1)/assets/profile-images/Ellipse -1.png"
+                        required> <img class="profile" id="image1"
+                            src="../../assets/FS HTML_CSS LP02 Employee Payroll App Assets (1)/assets/profile-images/Ellipse -1.png"
+                            alt="Sample"></mat-radio-button> -->
+                    <!-- 2nd button -->
+                    <!-- <mat-radio-button id="profile2" name="profile"
+                        value="../../assets/FS HTML_CSS LP02 Employee Payroll App Assets (1)/assets/profile-images/Ellipse -2.png"
+                        required><img class="profile" id="image2"
+                            src="../../assets/FS HTML_CSS LP02 Employee Payroll App Assets (1)/assets/profile-images/Ellipse -2.png"
+                            alt="Sample"></mat-radio-button> -->
+                    <!-- 3rd button -->
+                    <!-- <mat-radio-button id="profile3" name="profile"
+                        value="../../assets/FS HTML_CSS LP02 Employee Payroll App Assets (1)/assets/profile-images/Ellipse -3.png"
+                        required>
+                        <img class="profile" id="image3"
+                            src="../../assets/FS HTML_CSS LP02 Employee Payroll App Assets (1)/assets/profile-images/Ellipse -3.png"
+                            alt="Sample">
+                    </mat-radio-button> -->
+                    <!-- 4th button -->
+                    <!-- <mat-radio-button id="profile4" name="profile" value="../assert/FS HTML_CSS LP02 Employee Payroll App Assets (1)/assets/profile-images/Ellipse -4.png"required>
+                        <img class="profile" id="image4"src="../../assets/FS HTML_CSS LP02 Employee Payroll App Assets (1)/assets/profile-images/Ellipse -4.png"alt="Sample">
+                    </mat-radio-button> -->
+
+                <!-- all buttons -->
+                <mat-radio-button *ngFor="let imageID of imageIDList;let profileID of profilePicId;let profilePic of profilePicList;" id="{{profileID}}" name="profile" value="{{profilePic}}">
+                <img class="profile" id="{{imageID}}" src="{{profilePic}}" alt="Sample">
+                </mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+        <!-- Employee Payroll Form with Gender, Department and Salary Range -->
+        <div class="row-content row-content-new">
+            <mat-label class="label text" for="gender">Gender</mat-label>
+            <div>
+                <mat-radio-group formControlName="gender">
+                    <!-- <mat-radio-button required class="text" for="male" type="radio" id="male" name="gender" 
+                    value="male">
+                    Male</mat-radio-button>
+                    <mat-radio-button required class="text" for="female" type="radio" id="female" name="gender" 
+                    value="female">
+                        Female</mat-radio-button> -->
+                    <mat-radio-button *ngFor="let gender of genderList" required class="text" for="gender" id="{{gender}}" name="{{gender}}" [value]="gender">{{gender}}</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+        <div class="row-content row-content-new">
+            <mat-label class="label text" for="department">Department</mat-label>
+            <div id="department">
+                <!-- <mat-checkbox formControlName="department"  class="checkbox example-margin" type="checkbox" id="hr" name="department" value="HR">
+                    <mat-label class="text" for="hr">HR</mat-label>
+                </mat-checkbox>
+                <mat-checkbox formControlName="department" class="checkbox example-margin" type="checkbox" id="sales" name="department"
+                    value="Sales">
+                    <mat-label class="text" for="sales">Sales</mat-label>
+                </mat-checkbox>
+                <mat-checkbox formControlName="department" class="checkbox example-margin" type="checkbox" id="finance" name="department"
+                    value="Finance">
+                    <mat-label class="text" for="finance">Finance</mat-label>
+                </mat-checkbox>
+                <mat-checkbox formControlName="department" class="checkbox example-margin" type="checkbox" id="engineer" name="department"
+                    value="Engineer">
+                    <mat-label class="text" for="engineer">Engineer</mat-label>
+                </mat-checkbox>
+                <mat-checkbox formControlName="department" class="checkbox example-margin" type="checkbox" id="others" name="department"
+                    value="Others">
+                    <mat-label class="text" for="others">Others</mat-label>
+                </mat-checkbox> -->
+                <mat-checkbox *ngFor="let department of departmentList" formArrayName="department" class="checkbox example-margin" id="{{department}}" name="{{department}}" [value]="department" (click)="onClickDepartment($event,department)">
+                    <mat-label class="text" for="others">{{department}}</mat-label>
+                </mat-checkbox>
+            </div>
+        </div>
+        <div class="row-content row-content-new">
+            <mat-label class="label text" for="salary">Choose Your Salary </mat-label>
+            <mat-slider formControlName="salary" thumbLabel [displayWith]="formatLabel" tickInterval="1000" step="1000"
+                min="0" max="100000" aria-label="units"></mat-slider>
+            <output class="salary-output text" for="salary"></output>
+        </div>
+        <!-- Employee Payroll Form with start date -->
+        <div class="row-content row-content-new">
+            <mat-label class="label text" for="startDate">Start Date</mat-label>
+            <div id="date">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput formControlName="startDate" [matDatepicker]="picker" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker touchUi #picker></mat-datepicker>
+                </mat-form-field>
+                <!-- <error-output class="dates-error"></error-output> -->
+            </div>
+        </div>
+        <!-- Ability to add Notes and Button -->
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="note">Leave a comment</mat-label>
+            <textarea formControlName="note" matInput placeholder="Ex. It makes me feel..."></textarea>
+        </mat-form-field>
+        <div class="buttonParent">
+            <a routerLink="/home-page" mat-dialog-close mat-raised-button class="resetButton button cancelButton">Cancel</a>
+            <div class="submit-reset">
+                <button mat-raised-button mat-dialog-close type="submit" class="button submitButton" id="submitButton">Submit</button>
+                <button mat-raised-button type="reset" class="resetButton button">Reset</button>
+            </div>
+        </div>
+    </form>
